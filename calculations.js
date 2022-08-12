@@ -23,8 +23,19 @@ function operate(operator, num1, num2){
     return ans;
 }
 
-console.log(operate("+", 2, 3)); // 5
-console.log(operate("-", 2, 3)); //-1
-console.log(operate("*", -2, 3)); //-6
-console.log(operate("/", 2, 3)); //0.66
+function printSymbol(e){
+    let screen = document.querySelector('.calcScreen');
+    if(this.classList.contains("AC")){screen.textContent = "";}
+    else if(this.classList.contains('DEL')){screen.textContent = screen.textContent.slice(0,-1);}
+    else{
+        let text = this.getAttribute('id');
+        screen.textContent += text;
+    }
+    
+
+}
+
+let numbers = document.querySelectorAll('.button');
+numbers.forEach(number => number.addEventListener('click', printSymbol))
+
 
