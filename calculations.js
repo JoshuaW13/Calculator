@@ -16,24 +16,52 @@ function divide(num1, num2){
 
 function operate(e){
     let screen = document.querySelector('.calcScreen');
-    num2 = Number.parseFloat(screen.textContent);
+    if(nextClick === true){
+        num2 = Number.parseFloat(screen.textContent);
+    }
+    if(nextClick === false){
+        num1 = Number.parseFloat(screen.textContent);
+    }
+    
     screen.textContent = "";
     let ans;
     if(operator === "+"){ans = add(num1, num2);}
     else if(operator === "-"){ans = subtract(num1, num2);}
-    else if(operator === "*"){ans = multiply(num1, num2);}
+    else if(operator === "x"){ans = multiply(num1, num2);}
     else if(operator === "/"){ans = divide(num1, num2);}
     screen.textContent = ans;
+    console.log(num1+ " "+ num2+ nextClick);
+    nextClick = false;
+    
 }
 
 function setOperator(e){
     let screen = document.querySelector('.calcScreen');
-    console.log("clicked");
     if(this.textContent === "+"){
         operator = "+";
-        num1 = Number.parseFloat(screen.textContent);
+        if(screen.textContent != ""){num1 = Number.parseFloat(screen.textContent);}
         screen.textContent = "";
+        nextClick = true;
     }
+    else if(this.textContent === "×"){
+        operator = "x";
+        if(screen.textContent != ""){num1 = Number.parseFloat(screen.textContent);}
+        screen.textContent = "";
+        nextClick = true;
+    }
+    else if(this.textContent === "÷"){
+        operator = "/";
+        if(screen.textContent != ""){num1 = Number.parseFloat(screen.textContent);}
+        screen.textContent = "";
+        nextClick = true;
+    }
+    else if(this.textContent === "-"){
+        operator = "-";
+        if(screen.textContent != ""){num1 = Number.parseFloat(screen.textContent);}
+        screen.textContent = "";
+        nextClick = true;
+    }
+
 
 }
 
@@ -54,6 +82,7 @@ let num1;
 let num2;
 let sum;
 let operator;
+let nextClick;
 
 let numbers = document.querySelectorAll('.button');
 numbers.forEach(number => number.addEventListener('click', printSymbol));
