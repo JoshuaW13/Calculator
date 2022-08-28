@@ -110,6 +110,11 @@ function printSymbol(e){
     }
     else if(this.classList.contains('DEL')){screen.textContent = screen.textContent.slice(0,-1);}
     else if(this.classList.contains('operator')){return;}
+    else if(this.textContent === "."){
+        if(screen.textContent.indexOf(".")===-1){
+            screen.textContent += ".";
+        }
+    }
     else{
         let text = this.getAttribute('id');
         screen.textContent += text;
