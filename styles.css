@@ -1,20 +1,22 @@
 body{
     display: flex;
-    height: 100vh;
+    height: 98vh;
     background: radial-gradient(circle at -4% -12.9%, rgb(74, 98, 110) 0.3%, rgb(30, 33, 48) 90.2%);
-    font-family: "Lucida Console", "Courier New", monospace;  
+    font-family: "Lucida Console", "Courier New", monospace;
+    flex-direction: column;
+    justify-content:  center;
 
 }
 
 .calcBody{
-    margin: auto;
+    
     align-self: center;
     background-color: darkgrey;
     width: 320px;
     height: 500px;
     display: flex;
     flex-wrap: wrap;
-    margin-top: 100px;
+    
 }
 
 .buttons{
@@ -63,5 +65,21 @@ button{
 .smallButton{
     width: 60px;
     
+}
+
+.footer{
+    text-align:  center;
+    color: white;
+    margin-top: 60px;
+    
+    
+}
+
+.title{
+    text-align: center;
+    color: white;
+    font-size: xx-large;
+    font-weight: bold;
+    margin-bottom: 100px;
 }
 
