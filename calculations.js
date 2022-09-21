@@ -34,6 +34,7 @@ function operate(e){
     if(typeof num1 === 'undefined'){ans = screen.textContent;}
     
     //screen.textContent = "";
+    ans = screen.textContent;
     if(operator === "+"){ans = add(num1, num2);}
     else if(operator === "-"){ans = subtract(num1, num2);}
     else if(operator === "x"){ans = multiply(num1, num2);}
