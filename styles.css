@@ -1,13 +1,18 @@
 body{
+    display: grid;
+    grid-template-rows: auto min-content;
+    height: 95vh;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(36,36,78,1) 35%);
     
-    background: radial-gradient(circle at -4% -12.9%, rgb(74, 98, 110) 0.3%, rgb(30, 33, 48) 90.2%);
     font-family: "Lucida Console", "Courier New", monospace;
 
 }
 
 .calcBody{
+    place-self: center;
     margin: 0 auto;
-    margin-top: 50px;
+    margin-top: 20px;
     align-self: center;
     background-color: darkgrey;
     width: 320px;
